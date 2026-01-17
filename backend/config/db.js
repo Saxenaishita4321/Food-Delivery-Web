@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
 
 export const connectDB = async () => {
-    (await mongoose.connect(process.env.MONGO_URL).then(()=>console.log("DB Connected")));
+    try {
+    await mongoose.connect(process.env.MONGO_URL);
+    console.log("✅ MongoDB Atlas Connected");
+  } catch (error) {
+    console.error("❌ MongoDB connection failed", error.message);
+    process.exit(1);
+  }
 }
