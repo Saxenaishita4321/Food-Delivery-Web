@@ -4,3 +4,7 @@
 # Ignore .vscode directory
 **/.vscode/
 
+backend/.env
+frontend/.env
+admin/.env
+
